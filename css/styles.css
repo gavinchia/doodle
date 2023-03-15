@@ -56,9 +56,21 @@ body {
   display: inline-block;
   align-items: center;
   width: 1000px;
+  overflow: hidden;
 }
+/*
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+} */
 
-.nav-item {
+.navbar .icon {
+  display: none;
 }
 
 .nav-link {
@@ -75,6 +87,28 @@ body {
   color: #17a2b8;
 }
 
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child) {display: none;}
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar.responsive {position: relative;}
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
 .container-fluid {
   display: flex;
   flex-wrap: wrap;
@@ -88,6 +122,37 @@ body {
   text-align: left;
   display: flex;
   align-items: center;
+}
+
+@media (min-width: 400px) {
+  .banner {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .banner-text {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .banner {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 992px) {
+  .banner {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1200px) {
+  .banner {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
 }
 
 .banner-text {
@@ -128,8 +193,6 @@ body {
 .row {
   display: flex;
   max-width: 1140px;
-
-  /* margin: 10 auto 10 auto; */
 }
 
 .card-container {
@@ -138,6 +201,50 @@ body {
   flex: 0 0 50%;
   max-width: 50%;
   margin-bottom: 10px;
+}
+
+@media (min-width: 400px) {
+  .row {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    max-width: 100% !important;
+  }
+  .card-container {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .row {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    max-width: 100% !important;
+  }
+  .card-container {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .row {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-width: 100%;
+  }
+  .card-container {
+    max-width: 50% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .row {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-width: 100%;
+  }
+  .card-container {
+    max-width: 50% !important;
+  }
 }
 
 .card {
@@ -191,7 +298,7 @@ body {
 
 .testimonial-container {
   text-align: center;
-  max-width: 40%;
+  /* max-width: 40%; */
   margin: 10px auto;
 }
 
@@ -291,13 +398,42 @@ body {
 }
 
 .direction-transport {
-  font-size: 70%;
+  font-size: 80%;
   padding-top: 0.3rem;
 }
 
 .direction-timing {
-  font-size: 60%;
+  font-size: 70%;
   padding-top: 0.3rem;
+}
+
+@media (min-width: 400px) {
+  .map-container {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .map-container {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 992px) {
+  .map-container {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1200px) {
+  .map-container {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
 }
 
 .bottom {
@@ -310,8 +446,7 @@ body {
 .bottom-container {
   color: #17a2b8;
   font-family: "Handlee", cursive;
-  flex: 0 0 25%;
-  max-width: 25%;
+  max-width: 100%;
 }
 
 .bottom-details {
@@ -380,11 +515,13 @@ body {
 
 .about-school-text {
   color: #ffffff;
-  padding: 1rem 5rem;
+  padding: 1rem 1rem;
   flex: 0 0 60%;
-  max-width: 60%;
+  /* max-width: 60%; */
   letter-spacing: 1px;
   line-height: 25px;
+  text-align: justify;
+  max-width: 100% !important;
 }
 
 .about-teacher-text {
@@ -401,11 +538,43 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  padding: 1rem;
 }
 
 .about-img {
   flex: 0 0 50%;
-  max-width: 50%;
+  max-width: 100%;
+}
+
+@media (min-width: 400px) {
+  .about-container {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .about-school-text {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-container {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 992px) {
+  .about-container {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-container {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
 }
 
 .teacher-img {
@@ -433,11 +602,60 @@ body {
 }
 
 .location-address {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 5px;
 }
+
 .location-schedule {
-  margin-top: 1px;
+  margin-top: 0.5px;
+}
+
+@media (min-width: 400px) {
+  .location-container {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .location {
+    width: 100% !important;
+  }
+  .location-address {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  .location-schedule {
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: 768px) {
+  .location-container {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .location {
+    width: 100% !important;
+  }
+  .location-address {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  .location-schedule {
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: 992px) {
+  .location-container {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1200px) {
+  .location-container {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
 }
 
 .color-tael{
